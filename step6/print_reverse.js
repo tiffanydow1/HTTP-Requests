@@ -1,5 +1,5 @@
 
-var getHTML = require('../step6/http-functions');
+var getHTML = require('../step5/http-functions');
 
 var requestOptions = {
   host: 'sytantris.github.io',
@@ -8,6 +8,8 @@ var requestOptions = {
 
 function printReverse (html) {
 
+  console.log(html.split("").reverse().join(""));
+
 }
 
-getHTML(requestOptions, printReverse);
+getHTML.getHTML(requestOptions, printReverse);
