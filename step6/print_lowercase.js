@@ -1,5 +1,5 @@
 
-var getHTML = require('../step6/http-functions');
+var getHTML = require('../step5/http-functions');
 
 var requestOptions = {
   host: 'sytantris.github.io',
@@ -8,6 +8,8 @@ var requestOptions = {
 
 function printLowerCase (html) {
 
+  console.log(html.toLowerCase());
+
 }
 
-getHTML(requestOptions, printLowerCase);
+getHTML.getHTML(requestOptions, printLowerCase);
