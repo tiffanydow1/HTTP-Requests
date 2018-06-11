@@ -1,6 +1,6 @@
-function getAndPrintHTMLChunks () {
+var https = require('https');
 
-  var https = require('https');
+function getAndPrintHTMLChunks () {
 
   var requestOptions = {
     host: 'sytantris.github.io',
@@ -9,12 +9,14 @@ function getAndPrintHTMLChunks () {
 
   https.get(requestOptions, function(response) {
 
-    var data = [];
+    var bufferedData = [];
 
     response.setEncoding('UTF-8');
 
     response.on('data', function(chunk) {
-      console.log(data.push(chunk + '/n'));
+
+      bufferedData += data;
+      console.log(bufferedData);
     });
 
     response.on('end', function() {
